@@ -1,6 +1,6 @@
 # WordPress Docker Compose
 
-![docker-compose-actions-workflow](https://github.com/liemlylac/wordpress-docker-compose/workflows/docker-compose-actions-workflow/badge.svg)
+![build](https://github.com/liemlylac/wordpress-docker-compose/workflows/docker-compose-actions-workflow/badge.svg)
 [![Mit License](https://img.shields.io/github/license/liemlylac/wordpress-docker-compose)](https://github.com/liemlylac/wordpress-docker-compose/blob/master/LICENSE)
 
 Sample Wordpress docker-compose for local development
