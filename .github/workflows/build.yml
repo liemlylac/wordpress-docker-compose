@@ -13,6 +13,6 @@ jobs:
       - name: List container
         run: docker-compose ps
       - name: Test Wordpress container
-        run: docker run --rm appropriate/curl -s --retry 3 --retry-connrefused http://localhost:8080/
+        run: docker run --rm --network container:wordpress-docker-compose_wordpress_1 appropriate/curl -s --retry 3 --retry-connrefused http://localhost:8080/
       - name: Test PhpMyAdmin container
-        run: docker run --rm appropriate/curl -s --retry 3 --retry-connrefused http://localhost:8888/
+        run: docker run --rm--network container:wordpress-docker-compose_phpmyadmin_1 appropriate/curl -s --retry 3 --retry-connrefused http://localhost:8888/
