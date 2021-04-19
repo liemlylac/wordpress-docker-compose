@@ -5,7 +5,7 @@ on:
       - master
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
       - name: Build services
@@ -13,6 +13,6 @@ jobs:
       - name: List container
         run: docker-compose ps
       - name: Test Wordpress container
-        run: docker run --rm --network container:wordpress-docker-compose_wordpress_1 appropriate/curl --retry 3 --retry-connrefused http://localhost:8080/
+        run: docker run --rm --network container:wordpress-docker-compose_wordpress_1 appropriate/curl -s --retry 3 --retry-connrefused http://localhost/ > /dev/null
       - name: Test PhpMyAdmin container
-        run: docker run --rm --network container:wordpress-docker-compose_phpmyadmin_1 appropriate/curl --retry 3 --retry-connrefused http://localhost:8888/
+        run: docker run --rm --network container:wordpress-docker-compose_phpmyadmin_1 appropriate/curl -s --retry 3 --retry-connrefused http://localhost/ > /dev/null
