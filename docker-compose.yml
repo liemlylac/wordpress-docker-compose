@@ -5,6 +5,7 @@ services:
     image: wordpress:apache-xdebug3
     build:
       dockerfile: build/Dockerfile
+      context: ./build
     container_name: wordpress
     depends_on:
       - wordpress_db
